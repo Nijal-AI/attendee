@@ -100,4 +100,4 @@ if [[ "${PA_DEBUG:-0}" = "1" ]]; then
 fi
 
 echo "[entrypoint] PulseAudio ready. Exec: $*"
-exec "$@"
+exec honcho start
