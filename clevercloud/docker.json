@@ -1,0 +1,5 @@
+{
+  "deploy": {
+    "cmd": "honcho start"
+  }
+}
