@@ -99,5 +99,9 @@ if [[ "${PA_DEBUG:-0}" = "1" ]]; then
   echo "================"
 fi
 
-echo "[entrypoint] PulseAudio ready. Exec: $*"
+echo "[entrypoint] running migrations"
+python manage.py migrate --noinput
+echo "[entrypoint] collecting static files"
+python manage.py collectstatic --noinput
+echo "[entrypoint] release done, starting honcho"
 exec honcho start
