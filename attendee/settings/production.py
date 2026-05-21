@@ -8,6 +8,9 @@ from .base import LOG_FORMATTERS
 
 DEBUG = False
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+DATABASE_URL = os.getenv("DATABASE_URL") or os.getenv("POSTGRESQL_ADDON_URI")
+if not DATABASE_URL:
+    sys.exit("FATAL: ni DATABASE_URL ni POSTGRESQL_ADDON_URI ne sont definies")
 
 DATABASES = {
     "default": dj_database_url.config(
