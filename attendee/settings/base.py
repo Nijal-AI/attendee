@@ -294,7 +294,7 @@ STORAGES = {
     "bot_debug_screenshots": RECORDING_STORAGE_BACKEND,
     "audio_chunks": AUDIO_CHUNK_STORAGE_BACKEND,
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 AWS_S3_SIGNATURE_VERSION = "s3v4"
